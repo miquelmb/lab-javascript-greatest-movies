@@ -38,7 +38,7 @@ const scoresAverage = ((moviesArray) => {
     return totalScore / moviesArray.length;
 });
 
-console.log(`The average score of all movies is: ${scoresAverage(movies).toFixed(2)}`);
+//console.log(`The average score of all movies is: ${scoresAverage(movies).toFixed(2)}`);
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
 const dramaMoviesScore = ((moviesArray) => {
@@ -49,10 +49,28 @@ const dramaMoviesScore = ((moviesArray) => {
     return averageDramas / dramas.length;
 })
 
-console.log(`The averages score of all drama movies is: ${dramaMoviesScore(movies).toFixed(2)}`)
+//console.log(`The averages score of all drama movies is: ${dramaMoviesScore(movies).toFixed(2)}`)
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
-const orderByYear= ((moviesArray) => {})
+const orderByYear= ((moviesArray) => {
+    const sortedByYear = moviesArray.sort((a, b) => {
+        //explicacion, si a es mayor que b, que devuelva un numero negativo, pondrá a A por delante de B,
+        //si es alrevés, con un numero, B se pondrá por delante de A
+        //si son iguales, el 0 representa que no se moverán.
+        // if (a.year < b.year){
+        //     return -1;
+        // }
+        // if (a.year > b.year){
+        //     return 1;
+        // }
+        // return 0
+        return a.year - b.year;
+    });
+    //falta hacer iteración para que dos o más movies del mismo año, se ordenen alfabéticamente.
+    return sortedByYear;
+});
+
+console.log(orderByYear(movies))
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
 const orderAlphabetically = ((moviesArray) => {})
