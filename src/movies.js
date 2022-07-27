@@ -66,17 +66,31 @@ const orderByYear= ((moviesArray) => {
         // return 0
         return a.year - b.year;
     });
-    //falta hacer iteración para que dos o más movies del mismo año, se ordenen alfabéticamente.
+    //falta hacer iteración para que dos o más movies del mismo año, se ordenen alfabéticamente. Out of time
     return sortedByYear;
 });
-
-console.log(orderByYear(movies))
+//console.log(orderByYear(movies))
 
 // Iteration 6: Alphabetic Order - Order by title and print the first 20 titles
-const orderAlphabetically = ((moviesArray) => {})
+const orderAlphabetically = ((moviesArray) => {
+    const orderByLetters = moviesArray.sort((a, b) => {
+        const first = a.title.toUpperCase();
+        const second = b.title.toUpperCase();
+        let comparison = 0;
+        if (first > second) {
+            comparison = 1;
+        } else if (first < second) {
+            comparison = -1
+        }
+        return comparison;
+    })
+    return orderByLetters;
+})
+
+console.log(orderAlphabetically(movies));
 
 // BONUS - Iteration 7: Time Format - Turn duration of the movies from hours to minutes
-const turnHoursToMinutes = ((moviesArray) => {})
+const turnHoursToMinutes = ((moviesArray) => {});
 
 // BONUS - Iteration 8: Best yearly score average - Best yearly score average
-const bestYearAvg = ((moviesArray) => {})
+const bestYearAvg = ((moviesArray) => {});
